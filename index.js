@@ -77,11 +77,6 @@ const searchAPI = require("./routes/api/searchApi");
 app.use("/api/search", searchAPI);
 app.use("/api/genre", require("./routes/api/genreApi"));
 
-// 404
-app.get("*", (req, res) => {
-  res.render("pages/error");
-});
-
 // Server
 app.listen(port, () => {
   console.log(`Listening on port https://localhost:${port}`);
