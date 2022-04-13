@@ -1,0 +1,44 @@
+<%- include('../partials/head.ejs') %>
+<body>
+ <%- include('../partials/nav.ejs') %>
+    <div class="container">
+      <h1>Movie Page</h1>
+
+      <a class="waves-effect waves-light btn" href="/movies">Home page</a>
+      <a class="waves-effect waves-light btn" id="random">Random page</a>
+      <ul class="pagination">
+        <li class="waves-effect" id="prevPage"><a href="#!"><</a></li>
+        <li class="active teal" ><a href="#!" id="page-number">1</a></li>
+        <li class="waves-effect" id="nextPage"><a href="#!">></a></li>
+      </ul>
+
+
+      <div class="input-field col s12">
+        <select id="sort">
+          <option value="most-popular" selected>Popularity</option>
+          <option value="most-revenue">Revenue</option>
+        </select>
+        <label>Sort function</label>
+      </div>
+
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+      <div id="movies" class="row">
+
+      </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Our JavaScript -->
+    <!-- <script src="/js/apiConfig.js"></script> -->
+    <script src="/js/movies.js"></script>
+  </body>
+</html>

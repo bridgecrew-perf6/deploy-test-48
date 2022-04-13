@@ -1,0 +1,51 @@
+
+ <%- include('../partials/head.ejs') %>
+ <body>
+  <%- include('../partials/nav.ejs') %>
+
+    <div class="container">
+      <h1><%= title %></h1>
+      <main class="row">
+        <div id="welcome">
+          <div class="col s4" >
+            <img
+              src="/assets/welcome.svg"
+              alt="drawing of person waving in front of tree"
+            />
+          </div>
+          <div class="col s4">
+            <!-- image and weather content -->
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>
+            <div id="weather"></div>
+          </div>
+        </div>
+      </main>
+
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo odio
+          pariatur autem quia atque sapiente maxime vel vitae, explicabo officia
+          perferendis facilis corporis, ab debitis distinctio qui in delectus
+          reprehenderit cumque. Nihil nam voluptas culpa, hic ad blanditiis
+          laborum perferendis quibusdam recusandae enim, earum aperiam facere
+          vel. Eligendi, ut. Modi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo odio
+          pariatur autem quia atque sapiente maxime vel vitae, explicabo officia
+          perferendis facilis corporis, ab debitis distinctio qui in delectus
+          reprehenderit cumque. Nihil nam voluptas culpa, hic ad blanditiis
+          laborum perferendis quibusdam recusandae enim, earum aperiam facere
+          vel. Eligendi, ut. Modi.
+        </p>
+      </div>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Our JavaScript -->
+    <script src="/js/weather.js"></script>
+  </body>
+
+
+</html>

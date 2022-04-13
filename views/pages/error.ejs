@@ -1,0 +1,20 @@
+
+ <%- include('../partials/head.ejs') %>
+ <body>
+  <%- include('../partials/nav.ejs') %>
+
+    <div class="container">
+      <h1><%= title %></h1>
+      <main class="row">
+        <h1>Error: <%typeof status != 'undefined' ? status : 500 %></h1>
+        <p><%= error %></p>
+        <p><%typeof message != 'undefined' ? message : 'Internal server error' %></p>
+      </main>
+    </div>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Our JavaScript -->
+  <script src="/js/script.js"></script>
+  </body>
+
+
+</html>

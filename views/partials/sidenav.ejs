@@ -1,0 +1,32 @@
+<div class="container">
+  <h4>Search</h4>
+  <div class="input-field">
+    <input id="searchtxtbox" type="text" name="search" />
+    <label class="active" for="search">Search for a movie here:</label>
+  </div>
+  <h4>Sort</h4>
+  <div class="buttons">
+    <div>
+      <a class="waves-effect waves-light btn"  id="now-playing">Now Playing</a>
+    </div>
+    <div>
+      <a class="waves-effect waves-light btn" id="top-rated">Top-rated</a>
+    </div>
+    <div>
+      <a class="waves-effect waves-light btn" id="upcoming">Upcoming</a>
+    </div>
+  </div>
+  <div>
+    <h4>Select Genres</h4>
+    <ul id="genre">
+      <% genres.forEach(genre => { %>
+        <p>
+          <label>
+            <input type="checkbox" id="<%= genre.id%>" />
+            <span><%= genre.name %></span>
+          </label>
+        </p>
+      <% }) %>
+    </ul>
+  </div>
+</div>

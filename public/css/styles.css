@@ -1,0 +1,53 @@
+:root {
+   --main-color: teal;
+ }
+
+ h1 {
+   color: var(--main-color);
+ }
+
+ #weather {
+   padding: 1em;
+   background-color: white;
+   object-fit: contain;
+   text-align: center;
+ }
+
+ #icon {
+  width: 25%;
+  margin: 0 auto;
+ }
+
+ .movie-container {
+   height: 550px;
+   /* width: 100%;
+    object-fit: contain;
+    text-align: center; */
+ }
+
+ .movie-container img {
+   height: 440px;
+   transition: transform 0.2s;
+ }
+
+ .movie-container img:hover {
+   transform: scale(1.1);
+ }
+
+ #welcome {
+    display: flex
+ }
+
+ .sidenav form {
+   padding: 3em;
+ }
+
+#details{
+   background-color: rgba(255, 255, 255, 0.8);
+   border-radius: 5px;
+   border: 1px solid teal;
+}
+
+.buttons a {
+  margin: .5em;
+}

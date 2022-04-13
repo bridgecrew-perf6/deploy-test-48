@@ -1,0 +1,14 @@
+<nav class="teal">
+  <div class="nav-wrapper container">
+    <a href="/" class="brand-logo">jQuery</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if (login) { %>
+        <a role="button" id='login' class="btn btn-outline-primary log" href="/login/logout">Log Out</a>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+      <% }  %>
+      <li><a href="/movies">Movies</a></li>
+      <li><a href="/search">Search movies</a></li>
+    </ul>
+  </div>
+</nav>
