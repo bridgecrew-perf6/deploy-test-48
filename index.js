@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 const morgan = require("morgan");
@@ -76,12 +76,11 @@ app.use("/api/single-movie", require("./routes/api/singleMovieAPI"));
 app.use("/api/search", require("./routes/api/searchApi"));
 app.use("/api/genre", require("./routes/api/genreApi"));
 
-
 // 404
 app.get("*", (req, res) => {
   res.render("pages/error");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}/`);
+app.listen(PORT, () => {
+  console.log(`Example app listening on http://localhost:${PORT}/`);
 });
