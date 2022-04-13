@@ -1,21 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Middleware
-const morgan = require("morgan");
-app.use(morgan("dev"));
-
-const path = require("path");
-
-// cors
-const cors = require("cors");
-app.use(cors());
-
-/// Session Middleware
 const passport = require("passport");
 const session = require("express-session");
+const app = express();
+
+const image_URL = "https://image.tmdb.org/t/p/w185/";
+
+const port = process.env.PORT || 3000;
+
+/// Session Middleware
 app.use(
   session({
     secret: process.env.SECRET,
@@ -34,6 +27,9 @@ app.use(passport.session());
 // Set login and avatar variable when authenticated
 app.use(function (req, res, next) {
   res.locals.login = req.isAuthenticated();
+  if (req.isAuthenticated()) {
+    res.locals.avatar = image_URL + req.user.avatar;
+  }
   next();
 });
 
@@ -51,12 +47,16 @@ axios.defaults.params = {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// EJS - views by default
-app.set("view engine", "ejs");
+// body parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Static files
-// app.use(express.static("public"));
-app.use(express.static(path.join(__dirname, "public")));
+// static folder
+app.use(express.static("public"));
+
+// view engine
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
 // Routes
 const homeRouter = require("./routes/home");
@@ -82,6 +82,7 @@ app.get("*", (req, res) => {
   res.render("pages/error");
 });
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on http://localhost:${PORT}/`);
+// Server
+app.listen(port, () => {
+  console.log(`Listening on port https://localhost:${port}`);
 });
