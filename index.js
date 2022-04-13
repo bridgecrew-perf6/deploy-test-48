@@ -56,28 +56,28 @@ app.use(express.static("public"));
 
 // view engine
 app.set("view engine", "ejs");
-app.set("views", "./views");
+app.set("views", "./app/views");
 
 // Routes
-const homeRouter = require("./routes/home");
+const homeRouter = require("./app/routes/home");
 app.use("/", homeRouter);
-const movieRouter = require("./routes/movies");
+const movieRouter = require("./app/routes/movies");
 app.use("/movies", movieRouter);
-const searchRouter = require("./routes/search");
+const searchRouter = require("./app/routes/search");
 app.use("/search", searchRouter);
-const loginRouter = require("./routes/login");
+const loginRouter = require("./app/routes/login");
 app.use("/login", loginRouter);
-const signupRouter = require("./routes/signup");
+const signupRouter = require("./app/routes/signup");
 app.use("/signup", signupRouter);
 // API routes
-app.use("/api/weather", require("./routes/api/weatherAPI"));
-app.use("/api/all-movies", require("./routes/api/allMoviesAPI"));
-app.use("/api/single-movie", require("./routes/api/singleMovieAPI"));
-const searchAPI = require("./routes/api/searchApi");
+app.use("/api/weather", require("./app/routes/api/weatherAPI"));
+app.use("/api/all-movies", require("./app/routes/api/allMoviesAPI"));
+app.use("/api/single-movie", require("./app/routes/api/singleMovieAPI"));
+const searchAPI = require("./app/routes/api/searchApi");
 app.use("/api/search", searchAPI);
-app.use("/api/genre", require("./routes/api/genreApi"));
+app.use("/api/genre", require("./app/routes/api/genreApi"));
 
 // Server
 app.listen(port, () => {
-  console.log(`Listening on port https://localhost:${port}`);
+  console.log(`Listening on port http://localhost:${port}`);
 });
