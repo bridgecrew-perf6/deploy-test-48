@@ -73,7 +73,8 @@ app.use("/signup", signupRouter);
 app.use("/api/weather", require("./routes/api/weatherAPI"));
 app.use("/api/all-movies", require("./routes/api/allMoviesAPI"));
 app.use("/api/single-movie", require("./routes/api/singleMovieAPI"));
-app.use("/api/search", require("./routes/api/searchApi"));
+const searchAPI = require("./routes/api/searchApi");
+app.use("/api/search", searchAPI);
 app.use("/api/genre", require("./routes/api/genreApi"));
 
 // 404
