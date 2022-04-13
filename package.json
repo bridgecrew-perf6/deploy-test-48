@@ -1,0 +1,45 @@
+{
+  "name": "jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon -e js,ejs,css index",
+    "create_db": "psql -U postgres -f sql/create_db.sql",
+    "create_tables": "psql -U postgres -d project5 -f sql/create_tables.sql",
+    "seed_tables": "psql -U postgres -d project5 -f sql/seed_tables.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hy-js/jQuery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hy-js/jQuery/issues"
+  },
+  "homepage": "https://github.com/hy-js/jQuery#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bcrpyt": "^2.0.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pg-promise": "^10.11.1",
+    "session": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
